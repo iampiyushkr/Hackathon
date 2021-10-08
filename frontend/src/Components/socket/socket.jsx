@@ -7,7 +7,6 @@ const Page = styled.div`
   height: 100vh;
   width: 100%;
   align-items: center;
-  background-color: #136569;
   flex-direction: column;
 `;
 
@@ -18,44 +17,49 @@ const Container = styled.div`
   max-height: 500px;
   overflow: auto;
   width: 400px;
-  border: 1px solid lightgray;
+  border: 1px solid grey;
   border-radius: 10px;
   padding-bottom: 10px;
   margin-top: 25px;
+  border-bottom: none;
 `;
 
 const TextArea = styled.textarea`
-  width: 98%;
-  height: 100px;
+  width: 78%;
+  height: 30px;
   border-radius: 10px;
-  margin-top: 10px;
   padding-left: 10px;
-  padding-top: 10px;
+  padding-top: 17px;
   font-size: 17px;
   background-color: transparent;
-  border: 1px solid lightgray;
+  border: 1px solid grey;
   outline: none;
-  color: lightgray;
+  color: #555555;
   letter-spacing: 1px;
   line-height: 20px;
+  border-top-right-radius:0;
+  border-bottom-right-radius:0;
   ::placeholder {
-    color: lightgray;
+    color: grey;
   }
 `;
 
 const Button = styled.button`
   background-color: #00bcc6;
-  width: 102%;
+  width: 23%;
   border: none;
-  height: 50px;
+  height: 51px;
   border-radius: 10px;
-  color: #46516e;
+  color: white;
   font-size: 17px;
-  
+  border-top-left-radius:0;
+  border-bottom-left-radius:0;
+
 `;
 
 const Form = styled.form`
-  width: 400px;
+  width: 410px;
+  display: flex;
 `;
 
 const MyRow = styled.div`
@@ -68,7 +72,7 @@ const MyRow = styled.div`
 const MyMessage = styled.div`
   width: 45%;
   background-color: #00bcc6;
-  color: #46516e;
+  color: white;
   padding: 10px;
   margin-right: 5px;
   text-align: center;
@@ -156,8 +160,9 @@ const Socket = () => {
           value={message}
           onChange={handleChange}
           placeholder="Start Chatting......"
-        />
-        <Button>Send</Button>
+        >
+        </TextArea>
+          <Button>Send</Button>
       </Form>
     </Page>
   );
