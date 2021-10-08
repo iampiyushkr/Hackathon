@@ -32,15 +32,15 @@
   width: 50%;
   height: 100%;
   padding: 20px;
-  border: 2px solid #00bcc6;
   transition: 0.6s ease all;
+  box-shadow: 6px 6px 6px 6px rgb(180, 180, 180);
 }
 .landingmentordiv {
   width: 50%;
   height: 100%;
   padding: 20px;
-  border: 2px solid #00bcc6;
   transition: 0.6s ease all;
+  box-shadow: 6px 6px 6px 6px rgb(180, 180, 180);
 }
 .maindiv2h3 {
   text-align: center;
@@ -55,10 +55,10 @@
   margin-top: 1.5rem;
 }
 .landingstudentdiv:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .landingmentordiv:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .landingstudentdiv2 {
   width: 50%;
