@@ -1,0 +1,22 @@
+.cont {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  border: 1px solid red;
+  padding: 19px 50px;
+  margin: 10px;
+}
+.checkboxes {
+  display: flex;
+  max-width: 90%;
+  flex-wrap: wrap;
+  padding-left: 19px;
+}
+.checkDiv {
+  display: flex;
+  align-items: center;
+}
+.flight_div,
+.car_div {
+  margin-right: 29px;
+}
