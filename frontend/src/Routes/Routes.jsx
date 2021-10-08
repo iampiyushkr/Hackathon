@@ -1,6 +1,7 @@
 import { Switch, Route } from "react-router-dom"
 import { Temp } from "../Components/temp"
 import Landing from "../Components/Landing/landingPage"
+import Socket from "../Components/socket/socket"
 
  const Routes = () => {
     return (
@@ -10,6 +11,9 @@ import Landing from "../Components/Landing/landingPage"
             </Route>
             <Route exact path="/temp">
                 <Temp/>
+            </Route>
+            <Route exact path="/socket">
+                <Socket/>
             </Route>
         </Switch>
     )
