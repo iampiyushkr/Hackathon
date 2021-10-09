@@ -3,6 +3,7 @@ import { Temp } from "../Components/temp"
 import Landing from "../Components/Landing/landingPage"
 import Socket from "../Components/socket/socket"
 import Blogs from "../Components/Blogs/Blogs"
+import Sockettt from "../Components/socket/socketttt"
 
  const Routes = () => {
     return (
@@ -15,6 +16,9 @@ import Blogs from "../Components/Blogs/Blogs"
             </Route>
             <Route exact path="/socket">
                 <Socket/>
+            </Route>
+            <Route exact path="/sockettt">
+                <Sockettt/>
             </Route>
             <Route exact path="/blogs">
                 <Blogs/>

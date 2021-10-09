@@ -9,12 +9,12 @@
 .maindivh1 {
   padding-top: 190px;
   text-align: center;
-  color: #00bcc6;
+  color: rgb(0, 119, 255);
   font-size: 45px;
 }
 .maindivh3 {
   text-align: center;
-  color: #00bcc6;
+  color: rgb(0, 119, 255);
 }
 .maindiv2 {
   width: 100vw;
@@ -44,7 +44,7 @@
 }
 .maindiv2h3 {
   text-align: center;
-  color: #00bcc6;
+  color: rgb(0, 119, 255);
   font-size: 29px;
 }
 .landingstudentdiv1 {
@@ -80,7 +80,7 @@
 .landingstudentbutton {
   width: 40%;
   height: 3rem;
-  background: #00bcc6;
+  background: rgb(0, 119, 255);
   border-radius: 10px;
   border: none;
   color: white;
@@ -88,7 +88,7 @@
   font-weight: bolder;
 }
 .landingstudentbutton:hover {
-  color: #00bcc6;
+  color: rgb(0, 119, 255);
   background: white;
-  border: 2px solid #00bcc6;
+  border: 2px solid rgb(0, 119, 255);
 }
