@@ -39,8 +39,8 @@ export const TML = () => {
         <div className={styles.cont}>
             <h3>Mentor Login</h3>
             <TextField name="email" onChange={handleChange} className={classes.inps} placeholder="Enter your email"></TextField>
-            <TextField name="password" onChange={handleChange} className={classes.inps} placeholder="Enter your password"></TextField>
-            <Button variant="contained" color="primary" onClick={handleSubmit} className={classes.btn}>Submit</Button>
+            <TextField name="password" type="password" onChange={handleChange} className={classes.inps} placeholder="Enter your password"></TextField>
+            <Button variant="contained" onClick={handleSubmit} className={styles.btnSpl}>Submit</Button>
         </div>
     )
 }

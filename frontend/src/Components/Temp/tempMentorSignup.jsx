@@ -54,7 +54,7 @@ export const TMS = () => {
             <h3>Mentor Signup</h3>
             <TextField name="name" onChange={handleChange} className={classes.inps} placeholder="Enter your name"></TextField>
             <TextField name="email" onChange={handleChange} className={classes.inps} placeholder="Enter your email"></TextField>
-            <TextField name="password" onChange={handleChange} className={classes.inps} placeholder="Enter your password"></TextField>
+            <TextField name="password" type="password" onChange={handleChange} className={classes.inps} placeholder="Enter your password"></TextField>
             {/* <Button color="primary" variant="outlined" onClick={() => setShow(!show)}>Select the languages that you can converse in:</Button> */}
             <div style={{textAlign:"left", margin:"19px", fontWeight:"600", paddingLeft:"10px"}}>What languages do you speak?</div>
             <div className={styles.checkboxes}>
@@ -76,7 +76,7 @@ export const TMS = () => {
                         <MenuItem key={option} value={option}>{option}</MenuItem>
                     ))}
                 </TextField>
-            <Button variant="contained" color="primary" onClick={handleSubmit} className={classes.btn}>Submit</Button>
+            <Button variant="contained" className={styles.btnSpl} onClick={handleSubmit}>Submit</Button>
         </div>
     )
 }

@@ -47,8 +47,8 @@ export const TSL = () => {
         <div className={styles.cont}>
             <h3>Student Login</h3>
             <TextField name="email" onChange={handleChange} className={classes.inps} placeholder="Enter your email"></TextField>
-            <TextField name="password" onChange={handleChange} className={classes.inps} placeholder="Enter your password"></TextField>
-            <Button variant="contained" color="primary" onClick={handleSubmit} className={classes.btn}>Submit</Button>
+            <TextField name="password" type="password" onChange={handleChange} className={classes.inps} placeholder="Enter your password"></TextField>
+            <Button className={styles.btnSpl} variant="contained" onClick={handleSubmit} >Submit</Button>
         </div>
     )
 }

@@ -50,7 +50,7 @@ export const TSS = () => {
             <h3>Student Signup</h3>
             <TextField name="name" onChange={handleChange} className={classes.inps} placeholder="Enter your name"></TextField>
             <TextField name="email" onChange={handleChange} className={classes.inps} placeholder="Enter your email"></TextField>
-            <TextField name="password" onChange={handleChange} className={classes.inps} placeholder="Enter your password"></TextField>
+            <TextField name="password" type="password" onChange={handleChange} className={classes.inps} placeholder="Enter your password"></TextField>
             <div style={{textAlign:"left", margin:"19px", fontWeight:"600", paddingLeft:"10px"}}>What languages do you speak?</div>
             <div className={styles.checkboxes}>
                 <div className={styles.checkDiv}><Checkbox className={styles.checkboxStyle1} onChange={(e) => e.target.checked ? handleChecks("Hindi") : null} /><div className={styles.flight_div}>Hindi</div></div>
@@ -66,7 +66,7 @@ export const TSS = () => {
                 <div className={styles.checkDiv}><Checkbox className={styles.checkboxStyle1} onChange={(e) => e.target.checked ? handleChecks("Marathi") : null} /><div className={styles.flight_div}>Marathi</div></div>
                 <div className={styles.checkDiv}><Checkbox className={styles.checkboxStyle2} onChange={(e) => e.target.checked ? handleChecks("Kashmiri") : null} /><p className={styles.car_div}>Kashmiri</p></div>
             </div>
-            <Button variant="contained" color="primary" onClick={handleSubmit} className={classes.btn}>Submit</Button>
+            <Button variant="contained" className={styles.btnSpl} onClick={handleSubmit}>Submit</Button>
         </div>
     )
 }
