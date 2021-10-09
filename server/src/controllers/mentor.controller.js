@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 const Mentor = require("../models/mentor.model");
+const Student = require("../models/student.model");
 
 router.post("/signup", async (req, res) => {
     let mentor;
@@ -26,6 +27,14 @@ router.post("/login", async (req, res) => {
     } catch (err) {
         return res.status(500).send({ status: "failed", message: "Oops! Something went wrong. Please try again after some time." });
     }
+})
+
+router.get("/findmentor", async (req, res) => {
+    const student = await Student.findById(req.query.studentid).lean().exec();
+    const query = { languages: { $in: student.languages } };
+    const mentor = await Mentor.findOne({ $and: [{ domain: req.query.domain }, query] }).lean().exec();
+    if (!mentor) res.status(400).send({ status: "error" });
+    res.status(200).json({ mentor });
 })
 
 module.exports = router;

@@ -1,0 +1,5 @@
+export const SET_STUDENT = "SET_STUDENT";
+export const SET_MENTOR = "SET_MENTOR";
+export const SET_CURRENT_STUDENT = "SET_CURRENT_STUDENT";
+export const SET_CURRENT_MENTOR = "SET_CURRENT_MENTOR";
+export const LOGOUT = "LOGOUT";
