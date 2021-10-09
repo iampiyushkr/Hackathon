@@ -168,3 +168,39 @@
   cursor: pointer;
   font-size: 15px;
 }
+
+  /* student account */
+
+  .studentprofil{
+    width: 75%;
+    margin: auto;
+    margin-top: 50px;
+    height: 40%;
+    padding-top: 10%;
+}
+.studentleft{
+    width: 32%;
+    margin-left: 8%;
+    height: 20%;
+    border: 1px solid gray;
+
+   
+}
+.studentleft>img{
+    width: 100%;
+}
+.studentdiv{
+    display: flex;
+}
+.studentright>div{
+
+    display: flex;
+}
+.studentright{
+    margin-left: 10%;
+}
+.studentright p{
+  margin-left: 10px;
+  font-weight: 500;
+  margin-top: 20px;
+}

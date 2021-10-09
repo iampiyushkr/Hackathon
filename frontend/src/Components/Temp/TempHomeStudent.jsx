@@ -7,6 +7,7 @@ import { useHistory } from "react-router";
 import { setCurrentMentor } from "../../Redux/action";
 import { StudentDashboard } from "./StudentDashboard";
 import styles from "./temp.module.css";
+import Paper from '@mui/material/Paper';
 
 
 const domains = ["Art", "ML/AI", "Programming/Tech", "Political Science", "Law", "Medical", "Dental",
@@ -18,6 +19,7 @@ export const TempHomeStudent = () => {
     const [dashboard, setDashboard] = useState(true);
     const [chats, setChats] = useState(false);
     const [guide, setGuide] = useState(false);
+    const [account,setAccount]=useState(false)
     const history = useHistory();
     const student = useSelector(state => state.student);
     const studentLoggedIn = useSelector(state => state.studentLoggedIn);
@@ -42,16 +44,25 @@ export const TempHomeStudent = () => {
         setDashboard(true);
         setChats(false);
         setGuide(false);
+        setAccount(false)
     }
     const showChats = () => {
         setChats(true)
         setDashboard(false);
         setGuide(false);
+        setAccount(false)
     }
     const showGuide = () => {
         // setGuide(true);
         // setChats(false)
         // setDashboard(false);
+        //setAccount(false)
+    }
+    const showAccount=()=>{
+        setChats(false)
+        setDashboard(false);
+        setGuide(false);
+        setAccount(true)
     }
     return (
         <div style={{display:"flex", width:"95%"}}>
@@ -59,7 +70,7 @@ export const TempHomeStudent = () => {
                 <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:dashboard?"blue":"rgb(12,12,12)"}} onClick={showDashboard}>Dashboard</div>
                 <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:guide?"blue":"rgb(12,12,12)"}} onClick={showGuide}>Guide</div>
                 <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:chats?"blue":"rgb(12,12,12)"}} onClick={showChats}>Chats</div>
-                <div style={{ cursor: "pointer", fontSize: "21px", fontWeight: "600" }}>Account</div>
+                <div style={{ cursor: "pointer", fontSize: "21px", fontWeight: "600" }} onClick={showAccount}>Account</div>
             </div>
             {dashboard && <div className={styles.subDash}>
                 <h2 style={{marginBottom:"79px"}}>Chat with a Mentor</h2>
@@ -76,6 +87,39 @@ export const TempHomeStudent = () => {
             {guide && <div>
             
             </div>}
+            {account&&<div>
+                <Paper elevation={3}  className={styles.studentprofil} >
+                 <div className={styles.studentdiv}>
+                 <div className={styles.studentleft}>
+                    <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="error"/>
+                   
+                 </div>
+                 <div style={{width:"2px",height:"250px",backgroundColor:"gray",marginLeft:"10%"}}></div>
+                 <div className={styles.studentright}>
+                     <div>
+                     <h3>Name :</h3>
+                     <p>{student.name}</p>
+                     </div>
+                     
+                     <div>
+                     <h3>Email :</h3>
+                     <p>{student.email}</p>
+                     </div>
+                     <div>
+                     <h3>Language known :</h3>
+                     <p>Hindi</p>
+                     </div>
+                     <div>
+                     
+                   
+                     </div>
+                    
+                 </div>
+
+                 </div>
+             </Paper>
+
+                </div>}
         </div>
     )
 }
