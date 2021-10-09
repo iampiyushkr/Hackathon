@@ -204,3 +204,28 @@
   font-weight: 500;
   margin-top: 20px;
 }
+
+.mentorView>img{
+  width: 100%;
+}
+
+.carrierleft{
+  
+  margin-left: 3%;
+ 
+  display: flex;
+}
+.carrierRight{
+  width: 100%;
+  margin-left: 3%;
+  padding: auto;
+  border: 10px solid cyan;
+}
+.mentorView{
+  margin-left: 20px;
+  width: 150px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+

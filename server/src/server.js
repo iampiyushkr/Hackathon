@@ -2,18 +2,22 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
+const connect = require("./configs/db");
+
 app.use(cors());
 app.use(express.json());
 
-const connect = require("./configs/db");
-
-const studentController = require("./controllers/student.controller")
-const mentorController = require("./controllers/mentor.controller")
+const studentController = require("./controllers/student.controller");
+const mentorController = require("./controllers/mentor.controller");
+const blogcontroller = require("./controllers/blog.controller");
+const chatcontroller = require("./controllers/chat.controller");
 
 app.use("/students", studentController);
 app.use("/mentors", mentorController);
+app.use("/blogs", blogcontroller);
+app.use("/chats", chatcontroller);
 
 app.listen(2367, async function () {
-    await connect();
-    console.log("Listening to Port 2367");
-})
+  await connect();
+  console.log("Listening to Port 2367");
+});

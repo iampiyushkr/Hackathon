@@ -1,4 +1,8 @@
 import { Switch, Route } from "react-router-dom"
+import Landing from "../Components/Landing/landingPage"
+import Socket from "../Components/socket/socket"
+import Blogs from "../Components/Blogs/Blogs"
+import Sockettt from "../Components/socket/socketttt"
 import { ChatWithMentor } from "../Components/Temp/ChatWithMentor"
 import { MentorDashboard } from "../Components/Temp/MentorDashboard"
 import { MentorIntro } from "../Components/Temp/MentorIntro"
@@ -10,10 +14,21 @@ import { TML } from "../Components/Temp/tempMentor"
 import { TMS } from "../Components/Temp/tempMentorSignup"
 import { TSS } from "../Components/Temp/tempStudentSignup"
 
-
-export const Routes = () => {
+ const Routes = () => {
     return (
         <Switch>
+            <Route exact path="/">
+                <Landing/>
+            </Route>
+            <Route exact path="/socket">
+                <Socket/>
+            </Route>
+            <Route exact path="/sockettt">
+                <Sockettt/>
+            </Route>
+            <Route exact path="/blogs">
+                <Blogs/>
+            </Route>
             <Route exact path="/temp">
                 <TSL/>
                 <TML />
@@ -53,3 +68,5 @@ export const Routes = () => {
         </Switch>
     )
 }
+
+export default Routes

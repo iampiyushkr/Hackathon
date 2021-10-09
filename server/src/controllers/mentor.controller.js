@@ -36,5 +36,12 @@ router.get("/findmentor", async (req, res) => {
     if (!mentor) res.status(400).send({ status: "error" });
     res.status(200).json({ mentor });
 })
+router.get("", async (req, res) => {
+    
+    const mentor = await Mentor.find().lean().exec();
+    
+    res.status(200).json({ mentor });
+})
+
 
 module.exports = router;
