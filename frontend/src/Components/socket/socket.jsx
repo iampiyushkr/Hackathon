@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import io from "socket.io-client";
+import axios from "axios"
 
 const Page = styled.div`
   display: flex;
@@ -87,8 +88,8 @@ const PartnerRow = styled(MyRow)`
 const PartnerMessage = styled.div`
   width: 45%;
   background-color: transparent;
-  color: lightgray;
-  border: 1px solid lightgray;
+  color: #292929;
+  border: 1px solid #292929;
   padding: 10px;
   margin-left: 5px;
   text-align: center;
@@ -117,6 +118,14 @@ const Socket = () => {
   }, []);
 
   function receivedMessage(message) {
+    axios.get("http://localhost:2367/chats").then((res) => {
+      console.log(typeof res.data.data, res.data.data)
+      let array = []
+      res.data.data.forEach((e) => {
+        array.push(e.body)
+      })
+      console.log("array", array)
+    })
     setMessages((oldMsgs) => [...oldMsgs, message]);
   }
 
@@ -126,6 +135,7 @@ const Socket = () => {
       body: message,
       id: yourID,
     };
+    axios.post("http://localhost:2367/chats", messageObject)
     setMessage("");
     socketRef.current.emit("send message", messageObject);
   }

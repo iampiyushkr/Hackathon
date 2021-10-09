@@ -10,10 +10,12 @@ app.use(express.json());
 const studentController = require("./controllers/student.controller");
 const mentorController = require("./controllers/mentor.controller");
 const blogcontroller = require("./controllers/blog.controller");
+const chatcontroller = require("./controllers/chat.controller");
 
 app.use("/students", studentController);
 app.use("/mentors", mentorController);
 app.use("/blogs", blogcontroller);
+app.use("/chats", chatcontroller);
 
 app.listen(2367, async function () {
   await connect();

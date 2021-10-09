@@ -1,5 +1,4 @@
 import { Switch, Route } from "react-router-dom"
-import { Temp } from "../Components/temp"
 import Landing from "../Components/Landing/landingPage"
 import Socket from "../Components/socket/socket"
 import Blogs from "../Components/Blogs/Blogs"
@@ -10,9 +9,6 @@ import Sockettt from "../Components/socket/socketttt"
         <Switch>
             <Route exact path="/">
                 <Landing/>
-            </Route>
-            <Route exact path="/temp">
-                <Temp/>
             </Route>
             <Route exact path="/socket">
                 <Socket/>

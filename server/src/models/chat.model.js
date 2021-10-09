@@ -1,6 +1,6 @@
 const { model, Schema } = require("mongoose");
 
-const blogSchema = new Schema(
+const chatSchema = new Schema(
   {
     body: { type: String, required: true },
     id: { type: String, required: true },
@@ -11,6 +11,6 @@ const blogSchema = new Schema(
   }
 );
 
-const Blog = model("blog", blogSchema);
+const Chat = model("chat", chatSchema);
 
-module.exports = Blog;
+module.exports = Chat;
