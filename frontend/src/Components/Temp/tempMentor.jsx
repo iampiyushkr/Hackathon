@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
 import { setMentor, setStudent } from "../../Redux/action";
 import styles from "./temp.module.css";
 
@@ -20,12 +21,14 @@ export const TML = () => {
         }
     })
     const classes = useStyles();
+    const history = useHistory();
     const handleSubmit = () => {
         console.log(data);
         axios.post("http://localhost:2367/mentors/login", data)
             .then((res) => {
                 console.log(res.data.mentor);
                 dispatch(setMentor(res.data.mentor));
+                history.push("/temphomementor");
             })
             .catch((err) => {
                 alert(err);
@@ -41,6 +44,10 @@ export const TML = () => {
             <TextField name="email" onChange={handleChange} className={classes.inps} placeholder="Enter your email"></TextField>
             <TextField name="password" type="password" onChange={handleChange} className={classes.inps} placeholder="Enter your password"></TextField>
             <Button variant="contained" onClick={handleSubmit} className={styles.btnSpl}>Submit</Button>
+            <div className={styles.extraDiv}>
+                <p>Don't have an account?</p>
+                <button onClick={() => history.push("/mentorsignup")}>Signup</button>
+            </div>
         </div>
     )
 }

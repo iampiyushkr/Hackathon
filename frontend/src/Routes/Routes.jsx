@@ -1,5 +1,8 @@
 import { Switch, Route } from "react-router-dom"
 import { ChatWithMentor } from "../Components/Temp/ChatWithMentor"
+import { MentorDashboard } from "../Components/Temp/MentorDashboard"
+import { MentorIntro } from "../Components/Temp/MentorIntro"
+import { StudentDashboard } from "../Components/Temp/StudentDashboard"
 import { TSL } from "../Components/Temp/temp"
 import { TempHomeMentor } from "../Components/Temp/TempHomeMentor"
 import { TempHomeStudent } from "../Components/Temp/TempHomeStudent"
@@ -23,6 +26,9 @@ export const Routes = () => {
             <Route exact path="/temphomementor">
                 <TempHomeMentor/>
             </Route>
+            <Route exact path="/mentorintro">
+                <MentorIntro/>
+            </Route>
             <Route exact path="/chatwithmentor">
                 <ChatWithMentor/>
             </Route>
@@ -38,6 +44,12 @@ export const Routes = () => {
             <Route exact path="/mentorsignup">
                 <TMS/>
             </Route>
+            {/* <Route exact path="/studentdashboard">
+                <StudentDashboard/>
+            </Route>
+            <Route exact path="/mentordashboard">
+                <MentorDashboard/>
+            </Route> */}
         </Switch>
     )
 }

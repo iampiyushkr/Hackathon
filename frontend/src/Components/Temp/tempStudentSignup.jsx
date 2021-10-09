@@ -67,6 +67,10 @@ export const TSS = () => {
                 <div className={styles.checkDiv}><Checkbox className={styles.checkboxStyle2} onChange={(e) => e.target.checked ? handleChecks("Kashmiri") : null} /><p className={styles.car_div}>Kashmiri</p></div>
             </div>
             <Button variant="contained" className={styles.btnSpl} onClick={handleSubmit}>Submit</Button>
+            <div className={styles.extraDiv}>
+                <p>Already have an account?</p>
+                <button onClick={() => history.push("/studentlogin")}>Login</button>
+            </div>
         </div>
     )
 }

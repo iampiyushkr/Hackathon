@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { setCurrentMentor } from "../../Redux/action";
+import { StudentDashboard } from "./StudentDashboard";
+import styles from "./temp.module.css";
 
 
 const domains = ["Art", "ML/AI", "Programming/Tech", "Political Science", "Law", "Medical", "Dental",
@@ -13,6 +15,9 @@ const domains = ["Art", "ML/AI", "Programming/Tech", "Political Science", "Law",
 
 
 export const TempHomeStudent = () => {
+    const [dashboard, setDashboard] = useState(true);
+    const [chats, setChats] = useState(false);
+    const [guide, setGuide] = useState(false);
     const history = useHistory();
     const student = useSelector(state => state.student);
     const studentLoggedIn = useSelector(state => state.studentLoggedIn);
@@ -32,15 +37,45 @@ export const TempHomeStudent = () => {
             .catch((err) => {
                 alert(err);
             })
+        }
+    const showDashboard = () => {
+        setDashboard(true);
+        setChats(false);
+        setGuide(false);
+    }
+    const showChats = () => {
+        setChats(true)
+        setDashboard(false);
+        setGuide(false);
+    }
+    const showGuide = () => {
+        // setGuide(true);
+        // setChats(false)
+        // setDashboard(false);
     }
     return (
-        <div>
-            <TextField style={{width:"180px"}} name="domain" onChange={(e) => setDomain(e.target.value)} variant="outlined" label="Choose your Domain" select>
+        <div style={{display:"flex", width:"95%"}}>
+            <div className={styles.dash}>
+                <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:dashboard?"blue":"rgb(12,12,12)"}} onClick={showDashboard}>Dashboard</div>
+                <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:guide?"blue":"rgb(12,12,12)"}} onClick={showGuide}>Guide</div>
+                <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:chats?"blue":"rgb(12,12,12)"}} onClick={showChats}>Chats</div>
+                <div style={{ cursor: "pointer", fontSize: "21px", fontWeight: "600" }}>Account</div>
+            </div>
+            {dashboard && <div className={styles.subDash}>
+                <h2 style={{marginBottom:"79px"}}>Chat with a Mentor</h2>
+                <TextField style={{ width: "580px", marginRight:"70px" }} name="domain" onChange={(e) => setDomain(e.target.value)} variant="outlined" label="Choose your Domain" select>
                     {domains.map((option) => (
                         <MenuItem key={option} value={option}>{option}</MenuItem>
                     ))}
                 </TextField>
-            <Button variant="contained" onClick={handleClick}>Start Conversation with a mentor</Button>
+                <Button className={styles.btnSpl} variant="contained" onClick={handleClick}>Start Conversation with a mentor</Button>
+            </div>}
+            {chats && <div className={styles.subDash}>
+            
+            </div>}
+            {guide && <div>
+            
+            </div>}
         </div>
     )
 }

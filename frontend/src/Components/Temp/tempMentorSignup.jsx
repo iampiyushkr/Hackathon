@@ -77,6 +77,10 @@ export const TMS = () => {
                     ))}
                 </TextField>
             <Button variant="contained" className={styles.btnSpl} onClick={handleSubmit}>Submit</Button>
+            <div className={styles.extraDiv}>
+                <p>Already have an account?</p>
+                <button onClick={() => history.push("/mentorlogin")}>Login</button>
+            </div>
         </div>
     )
 }

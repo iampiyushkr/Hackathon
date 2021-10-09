@@ -49,6 +49,10 @@ export const TSL = () => {
             <TextField name="email" onChange={handleChange} className={classes.inps} placeholder="Enter your email"></TextField>
             <TextField name="password" type="password" onChange={handleChange} className={classes.inps} placeholder="Enter your password"></TextField>
             <Button className={styles.btnSpl} variant="contained" onClick={handleSubmit} >Submit</Button>
+            <div className={styles.extraDiv}>
+                <p>Already have an account?</p>
+                <button onClick={() => history.push("/studentsignup")}>Signup</button>
+            </div>
         </div>
     )
 }
