@@ -1,6 +1,6 @@
 .blogcardMaindiv {
   width: 100vw;
-  background-color: aquamarine;
+  background-color: rgb(177, 214, 248);
 }
 .blogcardmaindiv {
   width: 70%;
@@ -13,14 +13,14 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 0px;
+  top: 100px;
   left: 12%;
 }
 .maindivinnerdiv1button:nth-child(1) {
   width: 100%;
   margin-top: 50px;
   border: none;
-  background-color: aquamarine;
+  background-color: rgb(177, 214, 248);
   height: 40px;
   border-radius: 20px;
   font-size: 16px;
@@ -34,7 +34,7 @@
   width: 100%;
   margin-top: 10px;
   border: none;
-  background-color: aquamarine;
+  background-color: rgb(177, 214, 248);
   height: 40px;
   border-radius: 20px;
   font-size: 16px;
@@ -47,7 +47,7 @@ button p {
   margin-top: 8px;
 }
 .maindivinnerdiv1button:hover {
-  background-color: antiquewhite;
+  background-color: rgb(92, 146, 194);
 }
 .blogcard {
   display: flex;
@@ -55,7 +55,7 @@ button p {
   margin: auto;
   margin-top: 30px;
   padding: 20px;
-  border: 2px dotted coral;
+  border: 2px solid white;
   border-radius: 20px;
 }
 .blogcard img {

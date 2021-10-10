@@ -9,6 +9,7 @@ import { StudentDashboard } from "./StudentDashboard";
 import styles from "./temp.module.css";
 import Socket from "../socket/socket";
 import { Paper } from "@mui/material"
+import { Link } from "react-router-dom"
 
 
 const domains = ["Art", "ML/AI", "Programming/Tech", "Political Science", "Law", "Medical", "Dental",
@@ -72,7 +73,7 @@ export const TempHomeMentor = () => {
             <div className={styles.dash}>
                 {/* <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:dashboard?"blue":"rgb(12,12,12)"}} onClick={showDashboard}>Dashboard</div> */}
                 <div style={{ cursor: "pointer", fontSize: "21px", fontWeight: "600" }} onClick={showAccount}>Account</div>
-                <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:guide?"blue":"rgb(12,12,12)"}} onClick={showGuide}>Video Call</div>
+                <Link to="/webrtc"><div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:guide?"blue":"rgb(12,12,12)"}} onClick={showGuide}>Video Call</div></Link>
                 <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:chats?"blue":"rgb(12,12,12)"}} onClick={showChats}>Chats</div>
                 
             </div>

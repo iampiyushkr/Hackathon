@@ -1,7 +1,7 @@
 import { Box, TextField, makeStyles, MenuItem, Checkbox } from "@material-ui/core";
 import axios from "axios";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useStore } from "react-redux";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { setCurrentMentor } from "../../Redux/action";
@@ -12,6 +12,8 @@ import Paper from '@mui/material/Paper';
 import Mentor from "../Profile/mentorDetail";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import Webrtc from "../webRTC/webrtc";
+import { Link } from "react-router-dom"
 
 
 const domains = ["Art", "ML/AI", "Programming/Tech", "Political Science", "Law", "Medical", "Dental",
@@ -28,11 +30,13 @@ export const TempHomeStudent = () => {
     const [loading,setLoading]=useState(false)
     const [socket1,setSocket1]=useState(false)
     const [carrierDetail,setCarrierDetail]=useState(false)
-     const [mentorDetail1,setMentorDetail1]=useState(false)
+    const [mentorDetail1, setMentorDetail1] = useState(false)
+    const [webRtc1 , setWebrtc1] = useState(false)
     const [mentor,setMentor]=useState([])
      const [mentorDetail,setMentorDetail]=useState([])
     const history = useHistory();
     const student = useSelector(state => state.student);
+    localStorage.setItem("studentDetils", JSON.stringify(student))
     const studentLoggedIn = useSelector(state => state.studentLoggedIn);
     if (!studentLoggedIn) {
         history.push("/studentlogin");
@@ -119,11 +123,13 @@ export const TempHomeStudent = () => {
       }
       const handleChat=()=>{
         setSocket1(true)
-        console.log(socket1)
+          console.log(socket1)
+          setWebrtc1(false)
       }
 
       const handleVideocall=()=>{
-        setSocket1(false)
+          setSocket1(false)
+          setWebrtc1(true)
       }
     return (
         <div style={{display:"flex", width:"95%"}}>
@@ -182,12 +188,13 @@ export const TempHomeStudent = () => {
                 </div>    
 
                     <Button style={{marginLeft:"-10px"}} variant="contained" onClick={handleChat}>Start chat</Button>
-                    <Button style={{marginLeft:"100px"}} variant="contained" onClick={handleVideocall}>Video call</Button>
-                    
+                    <Link to="/webrtc"><Button style={{marginLeft:"100px"}} variant="contained" onClick={handleVideocall}>Video call</Button></Link>
+                                
             </Paper>
             
         </div>}
-             {socket1 &&  <Socket/>}
+                {socket1 && <Socket />}
+                { }
             </div>}
             {guide && <div>
             
