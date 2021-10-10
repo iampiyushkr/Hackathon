@@ -174,9 +174,10 @@
   .studentprofil{
     width: 75%;
     margin: auto;
+    margin-left: 25%;
     margin-top: 50px;
-    height: 40%;
-    padding-top: 10%;
+   
+    padding: 5%;
 }
 .studentleft{
     width: 32%;
@@ -219,13 +220,56 @@
   width: 100%;
   margin-left: 3%;
   padding: auto;
-  border: 10px solid cyan;
+  
 }
 .mentorView{
-  margin-left: 20px;
-  width: 150px;
+  
+  width: 200px;
+  margin: auto;
   margin-top: 50px;
   margin-bottom: 30px;
   cursor: pointer;
+}
+.mentorView p{
+font-size: 20px;
+font-weight: bold;
+}
+.mentorView span{
+  font-size: 18px;
+  font-weight: 500;
+  }
+.mentorDetail{
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  margin-top: 5%;
+  margin-left: 45%;
+ 
+}
+.mentorDetail img{
+  width: 60%;
+  
+}
+.mentorDetail p{
+  font-weight: bold;
+  font-size: 18px;
+}
+.mentorDetail span{
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.aboutCarrier{
+  width: 70%;
+  margin: auto;
+
+  padding: 1%;
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
+.aboutCarrier p{
+  font-size: 18px;
+  color: gray;
 }
 

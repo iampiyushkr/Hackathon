@@ -36,7 +36,6 @@ export const TempHomeStudent = () => {
      const [mentorDetail,setMentorDetail]=useState([])
     const history = useHistory();
     const student = useSelector(state => state.student);
-    localStorage.setItem("studentDetils", JSON.stringify(student))
     const studentLoggedIn = useSelector(state => state.studentLoggedIn);
     if (!studentLoggedIn) {
         history.push("/studentlogin");
@@ -189,7 +188,7 @@ export const TempHomeStudent = () => {
             
         </div>}
                 {socket1 && <Socket />}
-                { }
+                
             </div>}
             {guide && <div>
             

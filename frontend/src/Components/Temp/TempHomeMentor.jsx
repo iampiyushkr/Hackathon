@@ -20,7 +20,7 @@ export const TempHomeMentor = () => {
     const [dashboard, setDashboard] = useState(true);
     const [chats, setChats] = useState(false);
     const [guide, setGuide] = useState(false);
-    const [account,setAccount]=useState(false)
+    const [account,setAccount]=useState(true)
     const history = useHistory();
     const student = useSelector(state => state.mentor);
     const mentorLoggedIn = useSelector(state => state.mentorLoggedIn);
@@ -71,9 +71,10 @@ export const TempHomeMentor = () => {
         <div style={{display:"flex", width:"95%"}}>
             <div className={styles.dash}>
                 {/* <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:dashboard?"blue":"rgb(12,12,12)"}} onClick={showDashboard}>Dashboard</div> */}
-                <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:guide?"blue":"rgb(12,12,12)"}} onClick={showGuide}>Guide</div>
-                <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:chats?"blue":"rgb(12,12,12)"}} onClick={showChats}>Chats</div>
                 <div style={{ cursor: "pointer", fontSize: "21px", fontWeight: "600" }} onClick={showAccount}>Account</div>
+                <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:guide?"blue":"rgb(12,12,12)"}} onClick={showGuide}>Video Call</div>
+                <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:chats?"blue":"rgb(12,12,12)"}} onClick={showChats}>Chats</div>
+                
             </div>
             {/* {dashboard && <div className={styles.subDash}>
                 <h2 style={{marginBottom:"79px"}}>Chat with a Mentor</h2>
@@ -92,7 +93,7 @@ export const TempHomeMentor = () => {
             </div>}
             {account && <div>
                 <div>
-            <Paper elevation={3}  className="mentorDetail" >
+            <Paper elevation={3}  className={styles.mentorDetail} >
                     <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="Error"/>
                     <p>Name : <span>{student.name}</span> </p>
                     <p>Email : <span>{student.email}</span></p>
