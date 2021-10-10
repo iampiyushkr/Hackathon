@@ -134,7 +134,8 @@ export const TempHomeStudent = () => {
                 <div style={{ cursor: "pointer", fontSize: "21px", fontWeight: "600" }} onClick={showAccount}>Account</div>
             </div>
             {dashboard && <div className={styles.subDash}>
-                <h2 style={{marginBottom:"79px"}}>Chat with a Mentor</h2>
+            <div style={{width:"100%",margin:"auto",marginTop:"3%",fontSize:"20px",fontWeight:"bold",color:"white",padding:"1%",marginBottom:"6%",backgroundColor:"rgb(41, 98, 255)"}}>Choose your Domain</div>
+
                 <TextField style={{ width: "580px", marginRight:"70px" }} name="domain" onChange={handleChange} variant="outlined" label="Choose your Domain" select>
                     {domains.map((option) => (
                         <MenuItem key={option} value={option}>{option}</MenuItem>
@@ -143,16 +144,19 @@ export const TempHomeStudent = () => {
                 {/* <Button className={styles.btnSpl} variant="contained" onClick={handleClick}>Start Conversation with a mentor</Button> */}
 
                 {carrier&&<div className={styles.carrier}>
+
+                <div style={{width:"100%",margin:"auto",marginTop:"7%",fontSize:"20px",fontWeight:"bold",color:"white",padding:"1%",backgroundColor:"rgb(41, 98, 255)"}}>Choose your mentor for guidence</div>
         <div className={styles.carrierleft}>
             {/* we have to map here mentor  */}
         
         {mentor.map(e=><Paper onClick={()=>handleMentor(e._id)} elevation={3}  className={styles.mentorView} >
             <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="Error"/>
-            <p>Name : {e.name}</p>
-            <p>Language : {e.languages.map(e=><p>{e}</p>)}</p>
+            <p>Name : <span>{e.name}</span></p>
+            <p>Language : {e.languages.map(e=><span>{e}</span>)}</p>
         </Paper>)}
         </div>
         {carrierDetail && <div className={styles.carrierRight}>
+        <div style={{marginLeft:"-3%",width:"100%",margin:"auto",marginTop:"7%",fontSize:"20px",fontWeight:"bold",color:"white",padding:"1%",backgroundColor:"rgb(41, 98, 255)"}}>About your Domain</div>
          <Paper elevation={3}  className={styles.aboutCarrier} >
             <h2>{domain[0].name}</h2>
             <p>{domain[0].about}</p>
@@ -169,15 +173,16 @@ export const TempHomeStudent = () => {
             {chats && <div className={styles.subDash}>
                 
             {mentorDetail1 && <div>
-            <Paper elevation={3}  className="mentorDetail" >
+            <Paper elevation={3}  className={styles.mentorDetail} >
+                <div style={{textAlign:"left",margin:"auto",padding:"5%",width:"30%"}}>
                     <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="Error"/>
-                    <p>Name : {mentorDetail[0].name}</p>
-                    <p>{mentorDetail[0].name}</p>
-                    {mentorDetail[0].languages.map(e=><p>{e}</p>)}
-                    
+                    <p>Name : <span>{mentorDetail[0].name}</span></p>
+                    <p>Email : <span>{mentorDetail[0].email}</span></p>
+                   <p>Language : {mentorDetail[0].languages.map(e=><span>{e}</span>)}</p>
+                </div>    
 
-                    <Button  variant="contained" onClick={handleChat}>Start chat</Button>
-                    <Button style={{marginLeft:"10px"}} variant="contained" onClick={handleVideocall}>Video call</Button>
+                    <Button style={{marginLeft:"-10px"}} variant="contained" onClick={handleChat}>Start chat</Button>
+                    <Button style={{marginLeft:"100px"}} variant="contained" onClick={handleVideocall}>Video call</Button>
                     
             </Paper>
             
