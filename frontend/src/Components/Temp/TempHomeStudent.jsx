@@ -181,9 +181,9 @@ export const TempHomeStudent = () => {
                     {mentorDetail[0].languages.map(e=><p>{e}</p>)}
                     
 
-                    <Button  variant="contained" onClick={handleChat}>Start chat</Button>
-                        <Link to="/webrtc"><Button style={{marginLeft:"10px"}} variant="contained" onClick={handleVideocall}>Video call</Button></Link>
-                    
+                    <Button style={{marginLeft:"-10px"}} variant="contained" onClick={handleChat}>Start chat</Button>
+                    <Link to="/webrtc"><Button style={{marginLeft:"100px"}} variant="contained" onClick={handleVideocall}>Video call</Button></Link>
+                                
             </Paper>
             
         </div>}

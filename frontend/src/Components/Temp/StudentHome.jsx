@@ -5,7 +5,7 @@ import styles from "./temp.module.css"
 export const StudentHome = () => {
     const history = useHistory();
     return (
-        <div style={{maxHeight:"100vh"}} className={styles.sintroCont}>
+        <div style={{maxHeight:"100vh", display:"flex",flexDirection:"row"}} className={styles.sintroCont} >
         <div className={styles.coverImageDiv}  style={{width:"100%", height:"100vh", padding:"80px"}}>
             <img className={styles.coverImage} style={{width:"100%"}} src="/cover.png" alt="cover"/>
         </div>
