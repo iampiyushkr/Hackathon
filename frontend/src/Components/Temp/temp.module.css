@@ -168,3 +168,64 @@
   cursor: pointer;
   font-size: 15px;
 }
+
+  /* student account */
+
+  .studentprofil{
+    width: 75%;
+    margin: auto;
+    margin-top: 50px;
+    height: 40%;
+    padding-top: 10%;
+}
+.studentleft{
+    width: 32%;
+    margin-left: 8%;
+    height: 20%;
+    border: 1px solid gray;
+
+   
+}
+.studentleft>img{
+    width: 100%;
+}
+.studentdiv{
+    display: flex;
+}
+.studentright>div{
+
+    display: flex;
+}
+.studentright{
+    margin-left: 10%;
+}
+.studentright p{
+  margin-left: 10px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.mentorView>img{
+  width: 100%;
+}
+
+.carrierleft{
+  
+  margin-left: 3%;
+ 
+  display: flex;
+}
+.carrierRight{
+  width: 100%;
+  margin-left: 3%;
+  padding: auto;
+  border: 10px solid cyan;
+}
+.mentorView{
+  margin-left: 20px;
+  width: 150px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+

@@ -1,6 +1,9 @@
+
+import './App.css';
+
+import { TempNav } from "./Components/Temp/TempNav"
 import Routes from "./Routes/Routes";
-import "./App.css";
-import { TempNav } from "./Components/Temp/TempNav";
+
 
 function App() {
   return (

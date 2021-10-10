@@ -1,0 +1,52 @@
+.studentprofil{
+    width: 50%;
+    margin: auto;
+    margin-top: 200px;
+}
+.studentleft{
+    width: 28%;
+    margin-left: 8%;
+    height: 20%;
+    border: 1px solid gray;
+   
+}
+.studentleft>img{
+    width: 100%;
+}
+.studentdiv{
+    display: flex;
+}
+.studentright>div{
+
+    display: flex;
+}
+.studentright{
+    margin-left: 10%;
+}
+
+.mentorView>img{
+    width: 100%;
+}
+
+.carrierleft{
+    width: 15%;
+    margin-left: 3%;
+    border: 10px solid cyan;
+}
+.carrierRight{
+    width: 70%;
+    margin-left: 3%;
+    border: 10px solid cyan;
+}
+.carrier{
+    display: flex;
+}
+.mentorDetail{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    border: 10px solid cyan;
+}
+.mentorDetail>img{
+    width: 20%;
+}
