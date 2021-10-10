@@ -129,7 +129,7 @@ export const TempHomeStudent = () => {
         <div style={{display:"flex", width:"95%"}}>
             <div className={styles.dash}>
                 <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:dashboard?"blue":"rgb(12,12,12)"}} onClick={showDashboard}>Dashboard</div>
-                <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:guide?"blue":"rgb(12,12,12)"}} onClick={showGuide}>Guide</div>
+                <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:guide?"blue":"rgb(12,12,12)"}} onClick={showGuide}>Video</div>
                 <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:chats?"blue":"rgb(12,12,12)"}} onClick={showChats}>Chats</div>
                 <div style={{ cursor: "pointer", fontSize: "21px", fontWeight: "600", color:account?"blue":"rgb(12,12,12)" }} onClick={showAccount}>Account</div>
             </div>
