@@ -1,4 +1,4 @@
-import { Box, TextField, makeStyles, MenuItem, Checkbox, Button } from "@material-ui/core";
+import { Box, TextField, makeStyles, MenuItem, Checkbox } from "@material-ui/core";
 import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -10,6 +10,8 @@ import Socket from "../socket/socket";
 import styles from "./temp.module.css";
 import Paper from '@mui/material/Paper';
 import Mentor from "../Profile/mentorDetail";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 
 const domains = ["Art", "ML/AI", "Programming/Tech", "Political Science", "Law", "Medical", "Dental",
@@ -25,6 +27,7 @@ export const TempHomeStudent = () => {
     const [carrier,setCarrier]=useState(false)
     const [loading,setLoading]=useState(false)
     const [socket1,setSocket1]=useState(false)
+    const [carrierDetail,setCarrierDetail]=useState(false)
      const [mentorDetail1,setMentorDetail1]=useState(false)
     const [mentor,setMentor]=useState([])
      const [mentorDetail,setMentorDetail]=useState([])
@@ -81,7 +84,8 @@ export const TempHomeStudent = () => {
             setLoading(true)
             var newData=data.data.filter(e=>e.name===event.target.value)
             setDomain(newData)
-           // console.log(newData)
+            setCarrier(true)
+           console.log(newData)
             
             
         })
@@ -89,7 +93,8 @@ export const TempHomeStudent = () => {
           // console.log(data)
             var newData1=data.data.mentor.filter(e=>e.domain===event.target.value)
             setMentor(newData1)
-            setCarrier(true)
+            console.log(newData1)
+            setCarrierDetail(true)
             
     })
 
@@ -115,6 +120,10 @@ export const TempHomeStudent = () => {
       const handleChat=()=>{
         setSocket1(true)
         console.log(socket1)
+      }
+
+      const handleVideocall=()=>{
+        setSocket1(false)
       }
     return (
         <div style={{display:"flex", width:"95%"}}>
@@ -143,7 +152,7 @@ export const TempHomeStudent = () => {
             <p>Language : {e.languages.map(e=><p>{e}</p>)}</p>
         </Paper>)}
         </div>
-        <div className={styles.carrierRight}>
+        {carrierDetail && <div className={styles.carrierRight}>
          <Paper elevation={3}  className={styles.aboutCarrier} >
             <h2>{domain[0].name}</h2>
             <p>{domain[0].about}</p>
@@ -153,7 +162,7 @@ export const TempHomeStudent = () => {
             <p>{domain[0].latest.scope}</p>
             </Paper>
             
-        </div>
+        </div>}
         
     </div>}
             </div>}
@@ -165,7 +174,11 @@ export const TempHomeStudent = () => {
                     <p>Name : {mentorDetail[0].name}</p>
                     <p>{mentorDetail[0].name}</p>
                     {mentorDetail[0].languages.map(e=><p>{e}</p>)}
-                    <Button varient="secondary" onClick={handleChat}>Start chat</Button>
+                    
+
+                    <Button  variant="contained" onClick={handleChat}>Start chat</Button>
+                    <Button style={{marginLeft:"10px"}} variant="contained" onClick={handleVideocall}>Video call</Button>
+                    
             </Paper>
             
         </div>}
