@@ -54,10 +54,10 @@ export const TempHomeMentor = () => {
         setAccount(false)
     }
     const showGuide = () => {
-        // setGuide(true);
-        // setChats(false)
-        // setDashboard(false);
-        //setAccount(false)
+        setGuide(true);
+        setChats(false)
+        setDashboard(false);
+        setAccount(false)
     }
     const showAccount=()=>{
         setChats(false)
@@ -65,16 +65,14 @@ export const TempHomeMentor = () => {
         setGuide(false);
         setAccount(true)
         console.log(student)
-
     }
     return (
         <div style={{display:"flex", width:"95%"}}>
             <div className={styles.dash}>
                 {/* <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:dashboard?"blue":"rgb(12,12,12)"}} onClick={showDashboard}>Dashboard</div> */}
-                <div style={{ cursor: "pointer", fontSize: "21px", fontWeight: "600" }} onClick={showAccount}>Account</div>
-                <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:guide?"blue":"rgb(12,12,12)"}} onClick={showGuide}>Video Call</div>
+                <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:guide?"blue":"rgb(12,12,12)"}} onClick={showGuide}>Video</div>
                 <div style={{cursor:"pointer", fontSize:"21px", fontWeight:"600", color:chats?"blue":"rgb(12,12,12)"}} onClick={showChats}>Chats</div>
-                
+                <div style={{ cursor: "pointer", fontSize: "21px", fontWeight: "600", color:account?"blue":"rgb(12,12,12)" }} onClick={showAccount}>Account</div>
             </div>
             {/* {dashboard && <div className={styles.subDash}>
                 <h2 style={{marginBottom:"79px"}}>Chat with a Mentor</h2>

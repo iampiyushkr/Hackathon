@@ -14,6 +14,7 @@ import { TML } from "../Components/Temp/tempMentor"
 import { TMS } from "../Components/Temp/tempMentorSignup"
 import { TSS } from "../Components/Temp/tempStudentSignup"
 import Webrtc from "../Components/webRTC/webrtc"
+import { StudentHome } from "../Components/Temp/StudentHome"
 
  const Routes = () => {
     return (
@@ -63,12 +64,12 @@ import Webrtc from "../Components/webRTC/webrtc"
             <Route exact path="/webrtc">
                 <Webrtc/>
             </Route>
-            {/* <Route exact path="/studentdashboard">
+             {/* <Route exact path="/studentdashboard">
                 <StudentDashboard/>
-            </Route>
-            <Route exact path="/mentordashboard">
-                <MentorDashboard/>
-            </Route> */}
+                */}
+            <Route exact path ="/studentintro">
+                <StudentHome/>
+            </Route> 
         </Switch>
     )
 }
