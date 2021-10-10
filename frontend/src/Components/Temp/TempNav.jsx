@@ -20,11 +20,8 @@ export const TempNav = () => {
         <div className={styles.nav} style={{ display: "flex", alignItems: "center", backgroundColor: "rgb(3, 125, 150);", height: "89px", justifyContent: "space-evenly" }}>
             <div style={{height:"85%", width:"300px"}}><img onClick={() => history.push("/")} style={{height:"90%", width:"70px", cursor:"pointer"}} src="/hawkEyeLogo.png" alt="hawk"/></div>
             <div style={{ cursor: "pointer" }} onClick={() => history.push("/blogs")}>Blog</div>
-            <div style={{ cursor: "pointer" }} onClick={() => history.push("/studentlogin")}>Student Login</div>
-            <div style={{ cursor: "pointer" }} onClick={() => history.push("/studentsignup")}>Student Signup</div>
-            <div style={{ cursor: "pointer" }} onClick={() => history.push("/mentorlogin")}>Mentor Login</div>
-            <div style={{ cursor: "pointer" }} onClick={() => history.push("/mentorsignup")}>Mentor Signup</div>
-            <div style={{ cursor: "pointer" }} onClick={() => history.push("/mentorintro")}>Mentor Intro</div>
+            <div style={{ cursor: "pointer" }} onClick={() => history.push("/studentintro")}>Student</div>
+            <div style={{ cursor: "pointer" }} onClick={() => history.push("/mentorintro")}>Mentor</div>
             {(studentLoggedIn || mentorLoggedIn) ? <div style={{ cursor: "pointer" }} onClick={handleLogout}>Logout</div> : null}
         </div>
     )

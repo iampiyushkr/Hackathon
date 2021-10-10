@@ -16,6 +16,7 @@ function App() {
           display: "flex",
           backgroundColor: "rgb(245,247,250)",
           flexDirection: "column",
+          overflowX: "hidden"
         }}
       >
         <Routes />
